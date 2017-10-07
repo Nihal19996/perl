@@ -1,0 +1,20 @@
+use strict;
+use warnings;
+use Email::Send::SMTP::Gmail;
+
+my ($mail,$error) = Email::Send::SMTP::Gmail->new(
+    -layer =>'ssl',
+    -port  =>'465',
+    -smtp  =>'smtp.gmail.com',
+    -login =>'gmail.com',
+    -pass  =>''
+);
+ 
+die "session error: $error" if $mail ==-1;
+$mail->send(
+    -to         =>'nirmauni.ac.in',
+    -subject    =>'Attached Mail',
+    -body       =>'PFA',
+    -attachments=>'Send.txt'
+);
+$mail->bye;
