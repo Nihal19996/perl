@@ -52,8 +52,8 @@ my ($mail,$error) = Email::Send::SMTP::Gmail->new(
     -layer =>'ssl',
     -port  =>'465',
     -smtp  =>'smtp.gmail.com',
-    -login =>'uberhunter420@gmail.com',
-    -pass  =>'nihalnihal'
+    -login =>'your email id',
+    -pass  =>'password'
 );
  
 die "session error: $error" if $mail ==-1;
